@@ -1,0 +1,228 @@
+/* 🌟 Reset Default Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  overflow: hidden; /* Prevent page overflow */
+  background-image: url(https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L2ZyZWVpbWFnZXNjb21wYW55XzNkX2lsbHVzdHJhdGlvbl9vZl9zZm9vdGJhbGxfZmllbGRfZ29yZ2VvdXNfd19iZGVjMTgyNC04YzM3LTRiZGUtOGIwNS0xMzVhN2U4ZmIwODdfMS5qcGc.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+h1{
+  text-align: center;
+  margin: 40px;
+  font-family: "Mogra", serif;
+  color: rgb(237, 246, 249);
+  font-size: 100px;
+}
+
+/* 🌟 Main Container for Players & Form */
+.container {
+  display: flex;
+  justify-content: space-between; /* Spread items out */
+  align-items: flex-start; /* Align at the top */
+  padding: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  gap: 20px; /* Add space between form & player list */
+}
+
+/* 🌟 Player Grid Wrapper (Scrollable) */
+.playerGrid {
+  flex: 3; /* Take up 70% of the width */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  overflow-y: auto; /* Enable scrolling */
+  max-height: 70vh; /* Prevent overflowing */
+}
+
+/* 🌟 Individual Player Cards */
+.playerCard {
+  background-color: rgba(226, 149, 120, 0.8);
+  color: rgb(0, 109, 119);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  max-height: 350px; /* 🔥 Restricts size */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.playerCard img {
+  width: 100%;
+  height: 150px; /* 🔥 Smaller image */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.playerCard h3 {
+  margin-top: 10px;
+}
+
+/* 🌟 Scrollable Player Section */
+.playerGrid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.playerGrid::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 109, 119, 0.7);
+  border-radius: 5px;
+}
+
+/* 🌟 Form Section */
+.playerForm {
+  background-color: rgba(255, 221, 210, 0.9);
+  color: rgb(131, 197, 190);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.playerForm input,
+.playerForm select,
+.playerForm button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.playerForm button {
+  margin-top: 10px;
+  background-color: rgb(131, 197, 190);
+  color: white;
+  cursor: pointer;
+}
+
+.playerForm button:hover {
+  background-color: rgb(0, 109, 119);
+}
+
+/* 🌟 Remove & Details Player Button */
+.button {
+  background-color:transparent;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+/* 🌟 Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+  
+  .playerGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-height: 60vh;
+  }
+
+  .playerCard {
+    max-height: 320px;
+  }
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center; /* Ensures items stay aligned properly */
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  max-width: 400px; /* Prevents it from stretching too wide */
+  margin: 0 auto; /* Centers the search bar */
+  padding: 10px;
+}
+
+.searchContainer input {
+  flex: 0 1 250px; /* Prevents flexbox from expanding it */
+  padding: 8px;
+  width: 250px;
+  max-width: 100%; /* Ensures it does not grow excessively */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.searchContainer button {
+  flex: 0 1 100px; /* Prevents stretching */
+  padding: 8px 12px;
+  background-color: rgb(131, 197, 190);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  max-width: 120px; /* Limits the size */
+}
+
+.searchContainer button:hover {
+  background-color: rgb(0, 109, 119);
+}
+
+/* 🌟 Single Player Card Styling */
+.singlePlayerCard {
+  background-color: rgba(255, 221, 210, 0.9); /* Light pastel background */
+  color: rgb(0, 109, 119); /* Dark teal text */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  padding: 20px;
+  text-align: center;
+  max-width: 300px;
+  margin: 20px auto; /* Center card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.singlePlayerCard:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* 🌟 Player Image */
+.singlePlayerCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensure images don't stretch */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* 🌟 Player Info */
+.singlePlayerCard h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.singlePlayerCard h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+/* 🌟 Back Button */
+.backButton {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background-color: rgb(131, 197, 190);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.backButton:hover {
+  background-color: rgb(0, 109, 119);
+}

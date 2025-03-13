@@ -6,12 +6,14 @@
 }
 
 html, body {
-  height: 100vh;
-  overflow: hidden; /* Prevent page overflow */
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-image: url(https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L2ZyZWVpbWFnZXNjb21wYW55XzNkX2lsbHVzdHJhdGlvbl9vZl9zZm9vdGJhbGxfZmllbGRfZ29yZ2VvdXNfd19iZGVjMTgyNC04YzM3LTRiZGUtOGIwNS0xMzVhN2U4ZmIwODdfMS5qcGc.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed; /*ensures background stays consistent*/
 }
 h1{
   text-align: center;
@@ -125,13 +127,23 @@ h1{
     font-size: 40px;
   }
   
+  .container {
+    flex-direction: column; /* Stack form and player grid */
+    align-items: center; /* Center content */
+    gap: 30px; /* Add space between form & player grid */
+  }
+
   .playerGrid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    max-height: 60vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forces two per row */
+    gap: 15px; /* Adjust spacing */
+    width: 100%;
+    max-height: none; /* Remove height restriction */
+    overflow-y: visible; /* Ensure all players are visible */
   }
 
   .playerCard {
-    max-height: 320px;
+    width: 100%;
   }
 }
 
